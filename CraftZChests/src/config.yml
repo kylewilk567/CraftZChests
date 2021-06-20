@@ -1,0 +1,27 @@
+#Configuration file for CraftZChests 1.0.0
+
+language: eng #Currently only supports English
+
+#The "MASTER SWITCH". Disabling sounds or particles here disables for ALL tiers!
+sounds:
+  enabled: true
+    #Not all sounds guaranteed to work in your minecraft version 
+  default_effect: ENTITY_PLAYER_LEVELUP #Found here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html . GET THE LINK FOR YOUR VERSION!
+  
+particles:
+  enabled: true
+   #Not all particles guaranteed to work in your minecraft version 
+  default_particle: FIREWORKS_SPARK #Found here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html GET THE LINK FOR YOUR VERSION!
+  
+respawn_conditions:
+  player_nearby:
+    enabled: false
+    radius: 10  #Radius in blocks. A chest won't regen if a player is within this radius. Larger radius creates more lag (keep < 100)
+  
+datastorage:
+  host: localhost #These sections only needed if MySQL is chosen
+  port: 3306
+  database: minecraft
+  username: root
+  password: Ilikepi
+  tableprefix: CZ_

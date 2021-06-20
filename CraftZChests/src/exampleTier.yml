@@ -1,0 +1,61 @@
+#DO NOT MODIFY THIS! Randomly generated
+ID: CZC5902
+
+max_item_count: 4 # Max number of items in total
+min_item_count: 2 # Min number of items in total (2 bread or 1 apple and 1 bread)
+allow_item_repeats: true #Can a certain item in the loottable be given twice?
+
+#regeneration
+max_regen_seconds: 300
+min_regen_seconds: 60
+
+sound: 
+  enabled: true
+  effect: DEFAULT # What sound do you want played when a chest is opened? Put "DEFAULT" to use the one in config.yml
+particles:
+  enabled: true
+  effect: DEFAULT  # What particle do you want when a chest is opened? Put "DEFAULT" to use the one in config.yml
+  shape:  NORMAL #Options are NORMAL, HELIX, RISING_HALO, BURST, Z
+invisible: false #Makes the chest into a barrier instead of a physical chest
+
+#loot below
+
+items:
+  item1:
+    material: BREAD
+    weight: 20
+    amount: 3
+  item2:
+    material: WOOD_SWORD
+    weight: 20
+    amount: 1
+    max_durability: .3  
+    min_durability: .1 #Both durabilities must be between 0-1, but 1 cannot be used (tool would be broken). Represents a PERCENT of maximum durability of an item.
+    enchants:
+      enchantment1:
+        name: DAMAGE_ALL #Found here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/enchantments/Enchantment.html GET THE LINK FOR YOUR VERSION!
+        level: 2
+      enchantment2:
+        name: KNOCKBACK
+        level: 1
+  item3:
+    material: SPLASH_POTION
+    weight: 20
+    amount: 1
+    display_name: '&cPotion of Health'
+    potion_effect: HEAL #Found here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html GET THE LINK FOR YOUR VERSION!
+    potion_level: 1  #Level begins at 0. (0 means Heal I)
+    potion_duration: 1 #Duration in ticks (20 ticks = 1 second)
+    potion_hide_effects: true
+    potion_color: #NOTE: You MUST use these values to change the color of the potion or all potions will be the same color.
+      red: 43
+      green: 199  #Number between 1-255 for each Red, green, blue. Google "rgb color picker" and take those rgb values.
+      blue: 204
+  item4:
+    command: 'eco give {player} 1'
+    weight: 10
+      #OTHER NOTES:
+      #FOR 1.12 - use "INK_SACK" for material name AND specify a dye_color!!!
+      #Exampleitem:
+        #material: INK_SACK
+        #dye_color: BLUE ...etc https://helpch.at/docs/1.12.2/org/bukkit/DyeColor.html
